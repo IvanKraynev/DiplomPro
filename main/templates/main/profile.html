@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Личный кабинет</h2>
+            <p class="text-center">Добро пожаловать, {{ user.username }}!</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ u_form.email.id_for_label }}">Электронная почта</label>
+                    {{ u_form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ p_form.full_name.id_for_label }}">Полное имя</label>
+                    {{ p_form.full_name }}
+                </div>
+                <!-- Добавьте другие поля формы по аналогии -->
+                <button type="submit" class="btn btn-primary btn-block">Обновить</button>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    /* Скрыть требования к полю username */
+    .form-control + .helptext,
+    .form-control + ul {
+        display: none;
+    }
+    /* Выравнивание полей ввода */
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+    }
+</style>
+{% endblock %}

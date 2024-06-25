@@ -1,0 +1,134 @@
+@media (max-width: 992px) {
+    .about__content {
+        flex-direction: column;
+    }
+    .about__text {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+        align-items: center;
+    }
+}
+.about__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.about__content img {
+    max-width: 100%;
+    height: auto;
+}
+.about__text {
+    max-width: 600px;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about__text p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.about__text p:first-child {
+    font-weight: bold;
+}
+.button {
+    padding-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    align-self: flex-start;
+}
+.slider-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-bottom: 20px; /* Add margin for space between arrows and cards */
+}
+
+.card {
+    flex: 0 0 auto;
+    width: calc(100% / 3 - 20px); /* Adjust width and margins for spacing */
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 450px; /* Set fixed height for cards */
+    overflow: hidden; /* Hide overflow to ensure consistent height */
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-content {
+    padding: 10px;
+    height: 100%; /* Ensure card content fills the entire height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px; /* Make button round */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center button horizontally */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f8f9fa;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px; /* Increase padding for larger clickable area */
+    z-index: 10;
+    width: 40px; /* Adjust size of arrows */
+    height: 40px; /* Adjust size of arrows */
+    border-radius: 50%; /* Make arrows round */
+}
+
+.slider-control.prev {
+    left: 10px;
+}
+
+.slider-control.next {
+    right: 10px;
+}

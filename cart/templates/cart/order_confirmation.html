@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% load cart_extras %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Спасибо за ваш заказ!</h1>
+    <p class="lead">Ваш заказ был успешно оформлен и будет обработан в ближайшее время.</p>
+    <h2 class="mt-5">Order Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Товар</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Сумма</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order.orderitem_set.all %}
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="mr-3" style="width: 50px; height: 50px;">
+                        {{ item.product.title }}
+                    </div>
+                </td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.product.price }}₽</td>
+                <td>{{ item.product.price|multiply:item.quantity }}₽</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <p class="lead mb-0">Общая сумма: {{ order.total_price }}₽</p>
+        <a href="{% url 'index' %}" class="btn btn-primary">Вернуться на главную страницу</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+    <style>
+        .contact-info {
+            max-width: 600px;
+            margin: 20px auto; /* Добавляем отступ сверху и снизу */
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .contact-info p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 10px; /* Отступ снизу для контактных элементов */
+        }
+        .contact-info .contact-item {
+            display: flex; /* Располагаем иконку и текст на одной строке */
+            align-items: center; /* Выравниваем элементы по вертикали */
+        }
+        .contact-info .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                padding: 15px;
+            }
+            .contact-info h2 {
+                font-size: 20px;
+            }
+            .contact-info p {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="contact-info">
+            <h2>Контактная информация</h2>
+            <div class="contact-item">
+                <img src="{% static 'main/img/email-icon.png' %}" alt="Почта" class="icon">
+                <p>Электронная почта: office@stomka.shop</p>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'main/img/clock-icon.png' %}" alt="Время работы" class="icon">
+                <p>Пн - Пт: 8.00 - 17.00<br>Сб: 9.00 - 15.00</p>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'main/img/phone-icon.png' %}" alt="Номер телефона" class="icon">
+                <p>Телефон: +7 950 842-20-20</p>
+            </div>
+            <div class="contact-item">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad611b578ea63938427376d8ee4d7bb08927e6650ef2fff2563c6d9ed7b7d9905&amp;width=100%&amp;height=300&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </div>
+    </div>
+{% endblock %}

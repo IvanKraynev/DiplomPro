@@ -1,0 +1,169 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}О компании{% endblock %}
+{% block content %}
+<style>
+    @media (max-width: 992px) {
+    .about__content {
+        flex-direction: column;
+    }
+    .about__text {
+        margin-left: 0;
+        margin-top: 20px;
+        text-align: center;
+        align-items: center;
+    }
+}
+.about__content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.about__content img {
+    max-width: 100%;
+    height: auto;
+}
+.about__text {
+    max-width: 600px;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about__text p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.about__text p:first-child {
+    font-weight: bold;
+}
+    .advantages ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .advantages ul li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .advantages ul li i {
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .key-directions img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .training-center-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .training-center-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .about__content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .about__content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 20px;
+        }
+
+        .about__text p {
+            margin: 0;
+        }
+
+        @media (min-width: 768px) {
+            .training-center-content {
+                flex-wrap: nowrap;
+            }
+
+            .training-center-content img {
+                width: 50%;
+                height: auto;
+                margin-right: 20px;
+            }
+        }
+</style>
+<div class="container mt-4">
+    <section class="about">
+        <div class="container">
+            <div class="about__content">
+                <img src="{% static 'main\img\о нас.png' %}" alt="Здание">
+                <div class="about__text">
+                    <p>«СТОМКА» – компания, осуществляющая оптовую и розничную продажу стоматологических материалов, инструментов и оборудования, единственная на территории ЮФО компания, предлагающая товары для всех направлений стоматологического рынка.</p>
+                    <p>Наша задача - не просто продать, а организовать работу таким образом,  чтобы каждый клиент имел возможность развивать собственный бизнес в благоприятных условиях</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="key-directions mt-4 text-center">
+        <h2>Ключевые направления</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <img src="{% static 'main/img/dentist.png' %}" alt="Обучение дантистов">
+                <h3>Обучение дантистов</h3>
+                <p>Компания представляет информацию по использованию продуктов, помогает организовать программы тренировок на практике.</p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{% static 'main/img/materials.png' %}" alt="Продажа стоматологических материалов">
+                <h3>Продажа стоматологических материалов</h3>
+                <p>Компания имеет в наличии системы, инструменты, средства для дезинфекции, расходные материалы, средства персональной защиты.</p>
+            </div>
+        </div>
+    </div>
+    <div class="advantages mt-4">
+        <h2>Наши преимущества</h2>
+        <ul>
+            <li><i class="fas fa-handshake"></i>Бизнес со стабильностью и прозрачными условиями (маркетинг, аналитика, логистика)</li>
+            <li><i class="fas fa-sitemap"></i>Комплексная структура продаж на Российском стоматологическом рынке</li>
+            <li><i class="fas fa-bullhorn"></i>Активное продвижение компании, ее продуктов и услуг, включая интернет</li>
+            <li><i class="fas fa-gem"></i>Уникальные продуктовые характеристики</li>
+            <li><i class="fas fa-chalkboard-teacher"></i>Организация обучающих программ для докторов и поддокторов</li>
+            <li><i class="fas fa-warehouse"></i>Собственные склады в Ростове-на-Дону</li>
+            <li><i class="fas fa-expand"></i>Постоянное расширение пула поставщиков</li>
+        </ul>
+    </div>
+    <div class="history mt-4">
+        <h2>История компании</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Компания СТОМКА основана в 2004 году. За 20 лет работы мы накопили опыт взаимодействия с муниципальными медицинскими учреждениями (государственными больницами и поликлиниками), частными клиниками и врачами со стоматологической специализацией. Этот опыт позволил выявить и учесть запросы клиентов — практикующих, развивающихся, самоусовершенствующихся специалистов и производителей. В процессе создания комфортных условий для наших клиентов мы сформировали полный ассортимент стоматологических товаров официальных дистрибьюторов.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'main/img/история.png' %}" class="img-fluid" alt="Company Office">
+            </div>
+        </div>
+    </div>
+    <div class="training-center mt-4">
+        <h2>Учебный центр</h2>
+        <div class="training-center-content">
+            <img src="{% static 'main/img/центр.png' %}" class="img-fluid" alt="Training Center">
+            <div>
+                <p>В 2006 году был основан учебный центр СТОМКА. На базе центра регулярно проводятся обучающие онлайн и офлайн мероприятия с участием ведущих российских и иностранных спикеров. Программа мероприятий включает в себя теоретические и практические занятия, вебинары и мастер-классы по нескольким направлениям: повышение квалификации, освоение стоматологических технологий, продвижение стоматологических продуктов в социальных сетях, коммуникация и ведение диалога с пациентами и другие.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

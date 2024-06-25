@@ -1,0 +1,55 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.navbar-brand img {
+    height: 40px; /* Высота логотипа */
+    vertical-align: middle; /* Центрирование по вертикали */
+}
+
+.navbar-nav .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-item .nav-link i {
+    margin-right: 5px;
+}
+
+.navbar-collapse {
+    padding-left: 0;
+}
+
+.form-error {
+    display: none;
+}
+
+.dropdown-menu {
+    border: none; /* Убираем границы у дропдаун меню */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень */
+}
+
+.dropdown-item {
+    color: #333; /* Цвет текста для пунктов меню */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    font-size: 18px; /* Размер текста */
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        margin-right: 0;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+/* Увеличение текста в хедере */
+.navbar-brand,
+.navbar-nav .nav-link {
+    font-size: 18px; /* Размер текста */
+}

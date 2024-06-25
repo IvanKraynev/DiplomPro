@@ -1,0 +1,49 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Бренды{% endblock %}
+{% block content %}
+    <style>
+        .brands-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Align items to the left */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .brand-card {
+            padding: 10px;
+            margin: 10px;
+            width: calc(25% - 20px); /* 25% width minus margin */
+            box-sizing: border-box;
+            text-align: center;
+            background: #fff;
+        }
+        .brand-image {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: contain;
+        }
+        h1 {
+            text-align: left; /* Align heading to the left */
+            margin-top: 20px;
+            margin-left: 20px; /* Add some left margin */
+        }
+        p.description {
+            text-align: left; /* Align text to the left */
+            margin: 20px;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Бренды</h1>
+        <p class="description">Компания СТОМКА является официальным дилером представленных торговых марок. Это означает, что вся продукция действительно фирменная, никакого «серого импорта», на все товары распространяется гарантия, а цены соответствуют рекомендованным производителем.</p>
+        <div class="brands-container">
+            {% for brand in brands %}
+                <div class="brand-card">
+                    <img src="{{ brand.image.url }}" alt="{{ brand.alt_text }}" class="brand-image">
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

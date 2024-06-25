@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">Ваша корзина</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Товар</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Сумма</th>
+                <th scope="col">Действие</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.cartitem_set.all %}
+            <tr>
+                <td>
+                    <div class="d-flex align-items-center">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.title }}" class="mr-3" style="width: 50px; height: 50px;">
+                        {{ item.product.title }}
+                    </div>
+                </td>
+                <td>
+                    <form method="post" action="{% url 'update_cart' item.id %}" class="d-flex align-items-center">
+                        {% csrf_token %}
+                        <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control mr-2" style="width: 80px;">
+                        <button type="submit" class="btn btn-primary btn-sm">Обновить</button>
+                    </form>
+                </td>
+                <td>{{ item.product.price }}₽</td>
+                <td>{{ item.total_price }}₽</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Удалить</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between align-items-center">
+        <p class="mb-0">Total Price: {{ cart.total_price }}₽</p>
+        <a href="{% url 'checkout' %}" class="btn btn-success">Перейти к оформлению</a>
+    </div>
+</div>
+{% endblock %}
